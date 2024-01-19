@@ -36,7 +36,7 @@ const projects = [
 export default function Portfolio() {
   return (
     <div className="lg:p-10 w-screen">
-      <div className="text-black uppercase text-center my-14 flex justify-center items-center">
+      <div className="text-black marcellus-heading text-[32px] text-center my-14 flex justify-center items-center">
         <span className="bg-black h-0.5 w-5 mr-1"></span> Portfolio{" "}
         <span className="bg-black h-0.5 w-5 ml-1"></span>
       </div>
@@ -45,9 +45,15 @@ export default function Portfolio() {
           {projects.map((project, index) => (
             <React.Fragment key={index}>
               <div className="col-auto gap-4 self-center">
-                <h3 className="uppercase text-xl">{project.title}</h3>
-                <p>{project.description}</p>
-                <Link
+                <h3 className="marcellus-heading text-[32px]">{project.title}</h3>
+                <p className="text-[18px]">{project.description}</p>
+                <button 
+                // onClick={() => router.push('/about')} 
+                onClick={() => window.location.href = project.link}
+                className="bg-[#B464A3] text-white px-4 py-2 rounded-[8px] focus:outline-none focus:ring mt-5">
+                  View Case Study
+                </button>
+                {/* <Link
                   target="_blank"
                   href={project.link}
                   className="flex items-center mt-10 underline"
@@ -61,7 +67,7 @@ export default function Portfolio() {
                     height={10}
                     priority
                   />
-                </Link>
+                </Link> */}
               </div>
               <div className="col-auto">
                 <Image

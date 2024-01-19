@@ -35,15 +35,15 @@ export default function Count() {
         <span className="bg-white h-0.5 w-5 mr-1"></span> My design process{" "}
         <span className="bg-white h-0.5 w-5 ml-1"></span>
       </div>
-      <div className="grid lg:grid-cols-5 flex gap-10">
+      <div className="grid lg:grid-cols-5 flex gap-28 px-20">
         {process.map((software, index) => (
           <div key={index} className={"mt-2"}>
             <div
-              className={`col-auto text-[#B464A3] text-[100px] ${Arap.style.fontFamily}`}
+              className={`col-auto arape-button text-[#B464A3] text-[100px] ${Arap.style.fontFamily}`}
             >
               {software.title}
             </div>
-            <span className="text-xs text-white text-[21px]">
+            <span className="text-xs marcellus-heading text-white text-[20px]">
               {software.description}
             </span>
           </div>

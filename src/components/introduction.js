@@ -24,20 +24,20 @@ export default function Introduction() {
           />
         </div>
         <div className="col-auto text-left w-auto text-wrap lg:p-32 text-xl text-white">
-          <div className="text-white uppercase mt-6 flex items-center text-[36] mb-5">
+          <div className="text-white marcellus-heading mt-6 flex items-center text-[36px] mb-5">
             <span className="bg-white h-0.5 w-5 mr-1"></span> Hi, i’m dorcas{" "}
             <span className="bg-white h-0.5 w-5 ml-1"></span>
           </div>
-          <p className={`${Marcell.style.fontFamily}`}>
+          <p className={`${Marcell.style.fontFamily} text-[20px]`}>
             I delve into designing due to my long desire in solving design
             related problems, which i encountered as a user of some
             applications.
           </p>
-          <p className={`mt-2 normal-case ${Marcell.style.fontFamily}`}>
+          <p className={`mt-2 normal-case ${Marcell.style.fontFamily} text-[20px]`}>
             With the use of proper research and design process, the inculcated
             problems can be resolved.
           </p>
-          <button onClick={() => router.push('/about')} className="bg-[#B464A3] text-white px-4 py-2 rounded-[8px] hover:bg-pink-600 focus:outline-none focus:ring focus:border-pink-700 mt-5">
+          <button onClick={() => router.push('/about')} className="bg-[#B464A3] text-white px-4 py-2 rounded-[8px] focus:outline-none focus:ring mt-5">
             About Me
           </button>
         </div>

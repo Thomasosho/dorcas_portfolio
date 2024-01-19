@@ -12,7 +12,9 @@
     "@vercel/analytics": "^1.1.2",
     "@vercel/speed-insights": "^1.0.5",
     "alpinejs": "^3.13.3",
+    "dotenv": "^16.3.1",
     "next": "14.0.4",
+    "nodemailer": "^6.9.8",
     "react": "^18",
     "react-dom": "^18"
   },

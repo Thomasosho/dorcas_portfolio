@@ -8,7 +8,7 @@ export default function Header() {
   };
 
   return (
-    <nav className="bg-white border-gray-200 px-2 sm:px-4 py-2.5 fixed w-screen top-0 z-10">
+    <nav className="bg-white marcells-paragraph border-gray-200 px-2 sm:px-4 py-2.5 fixed w-screen top-0 z-10">
       <div className="container flex flex-wrap justify-between items-center mx-auto lg:px-32">
         <Link href="/" className="flex">
           <Image
@@ -83,7 +83,7 @@ export default function Header() {
                     return;
                   }
                 }}
-                className="bg-[#B464A3] text-white px-4 py-2 rounded-[8px] hover:bg-pink-600 focus:outline-none focus:ring focus:border-pink-700"
+                className="bg-[#B464A3] marcells-paragraph text-[20px] text-white p-4 rounded-[8px] focus:outline-none focus:ring"
               >
                 Get in Touch
               </button>
