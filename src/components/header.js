@@ -57,24 +57,34 @@ export default function Header() {
           <ul className="flex flex-col items-center mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium">
             <li>
               <Link
-                href="/about"
-                className="block py-2 pr-4 pl-3 text-white text-xl md:bg-transparent md:p-0 dark:text-white"
+                href="/"
+                className="block py-2 pr-4 pl-3 text-black text-xl md:bg-transparent md:p-0 dark:text-white"
                 aria-current="page"
               >
-                About me
+                Home
               </Link>
             </li>
             <li>
               <Link
-                href="#"
-                className="block py-2 pr-4 pl-3 text-white text-xl  md:p-0 dark:text-white"
+                href="/about"
+                className="block py-2 pr-4 pl-3 text-black text-xl  md:p-0 dark:text-white"
                 aria-current="page"
               >
-                Resume
+                About
               </Link>
             </li>
             <li>
-              <button className="bg-[#B464A3] text-white px-4 py-2 rounded-[8px] hover:bg-pink-600 focus:outline-none focus:ring focus:border-pink-700">
+              <button
+                onClick={() => {
+                  const footerSection = document.getElementById("footer");
+                  if (footerSection) {
+                    footerSection.scrollIntoView({ behavior: "smooth" });
+                  } else {
+                    return;
+                  }
+                }}
+                className="bg-[#B464A3] text-white px-4 py-2 rounded-[8px] hover:bg-pink-600 focus:outline-none focus:ring focus:border-pink-700"
+              >
                 Get in Touch
               </button>
             </li>
@@ -84,4 +94,3 @@ export default function Header() {
     </nav>
   );
 }
-

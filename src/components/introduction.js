@@ -1,5 +1,6 @@
 import { Marcellus } from "next/font/google";
 import Image from "next/image";
+import { useRouter } from 'next/router';
 
 const Marcell = Marcellus({
   weight: ["400"],
@@ -7,6 +8,9 @@ const Marcell = Marcellus({
 });
 
 export default function Introduction() {
+  
+  const router = useRouter();
+
   return (
     <div className="w-screen h-[auto] p-10 bg-[#595959] space-y-16 flex flex-col justify-center items-center text-center">
       <div className="grid lg:grid-cols-2 gap-1 items-center">
@@ -33,7 +37,7 @@ export default function Introduction() {
             With the use of proper research and design process, the inculcated
             problems can be resolved.
           </p>
-          <button className="bg-[#B464A3] text-white px-4 py-2 rounded-[8px] hover:bg-pink-600 focus:outline-none focus:ring focus:border-pink-700 mt-5">
+          <button onClick={() => router.push('/about')} className="bg-[#B464A3] text-white px-4 py-2 rounded-[8px] hover:bg-pink-600 focus:outline-none focus:ring focus:border-pink-700 mt-5">
             About Me
           </button>
         </div>

@@ -24,7 +24,7 @@ async function onSubmit(event) {
 export default function Footer() {
   const currentYear = new Date().getFullYear();
   return (
-    <div className="w-screen h-[auto] bg-[#595959] lg:flex lg:flex-col justify-center items-center text-center">
+    <div id="footer" className="w-screen h-[auto] bg-[#595959] lg:flex lg:flex-col justify-center items-center text-center">
       <div className="grid lg:grid-cols-3 grid-cols-1 gap-1 items-center">
         <div className="col-auto lg:p-32 p-10 w-auto justify-self-center">
           <Image
@@ -43,7 +43,7 @@ export default function Footer() {
             Let’s create amazing projects
           </p>
           <div className="flex grid grid-cols-5 mt-6">
-            <Link href={"mailto:charlesdorcas01@gmail.com"} className={`mt-2`}>
+            <Link target="_blank" href={"mailto:charlesdorcas01@gmail.com"} className={`mt-2`}>
               <Image
                 src="/email.png"
                 alt="Dorcas Charles"
@@ -53,7 +53,7 @@ export default function Footer() {
               />
             </Link>
 
-            <Link href={"/"} className={`mt-2`}>
+            <Link target="_blank" href={"tel:+447442885430"} className={`mt-2`}>
               <Image
                 src="/call.png"
                 alt="Dorcas Charles"
@@ -63,7 +63,7 @@ export default function Footer() {
               />
             </Link>
 
-            <Link href={"/"} className={`mt-2`}>
+            <Link target="_blank" href={"www.behance.net/charlesdorcas"} className={`mt-2`}>
               <Image
                 src="/be.png"
                 alt="Dorcas Charles"
@@ -73,7 +73,7 @@ export default function Footer() {
               />
             </Link>
 
-            <Link href={"/"} className={`mt-2`}>
+            <Link target="_blank" href={"www.dribble.com/charlesdorcas01"} className={`mt-2`}>
               <Image
                 src="/ball.png"
                 alt="Dorcas Charles"
@@ -83,7 +83,7 @@ export default function Footer() {
               />
             </Link>
 
-            <Link href={"/"} className={`mt-2`}>
+            <Link target="_blank" href={"www.linkedin.com/in/dorcas-charles"} className={`mt-2`}>
               <Image
                 src="/in.png"
                 alt="Dorcas Charles"

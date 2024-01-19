@@ -7,7 +7,17 @@ export default function Head() {
       <p className="text-white text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl">
         UI/UX DESIGNER || Digital marketer
       </p>
-      <button className="bg-[#B464A3] capitalize text-white px-4 py-2 rounded-[8px] hover:bg-pink-600 focus:outline-none focus:ring focus:border-pink-700 mt-4">
+      <button
+        onClick={() => {
+          const footerSection = document.getElementById("footer");
+          if (footerSection) {
+            footerSection.scrollIntoView({ behavior: "smooth" });
+          } else {
+            return;
+          }
+        }}
+        className="bg-[#B464A3] capitalize text-white px-4 py-2 rounded-[8px] hover:bg-pink-600 focus:outline-none focus:ring focus:border-pink-700 mt-4"
+      >
         Get in touch
       </button>
     </div>
