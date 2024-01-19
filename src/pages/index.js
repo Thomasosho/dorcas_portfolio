@@ -10,6 +10,10 @@ export default function Home() {
     <main
       className={`flex min-h-screen w-screen flex-col items-center justify-between`}
     >
+      <Head>
+        <title>Create Next App</title>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       <Header />
       <Head />
       <Offer />
