@@ -15,7 +15,7 @@ export default function Header() {
             src="/logo.png"
             alt="Dorcas Charles"
             className="dark:invert"
-            width={52}
+            width={32}
             height={24}
             priority
           />

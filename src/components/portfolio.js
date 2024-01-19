@@ -41,7 +41,7 @@ export default function Portfolio() {
         <span className="bg-black h-0.5 w-5 ml-1"></span>
       </div>
       <div className="h-auto lg:px-36 p-10 mt-10 bg-[#fff] flex justify-center items-center">
-        <div className="grid lg:grid-cols-2 gap-28">
+        <div className="grid lg:grid-cols-2 lg:gap-28 gap-2">
           {projects.map((project, index) => (
             <React.Fragment key={index}>
               <div className="col-auto gap-4 self-center">

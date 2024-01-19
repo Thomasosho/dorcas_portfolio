@@ -1,6 +1,6 @@
 export default function Head() {
   return (
-    <div className="w-screen min-h-screen bg-[#595959] space-y-16 flex flex-col justify-center items-center text-center p-4">
+    <div className="w-screen min-h-screen bg-[#595959] space-y-20 mt-16 flex flex-col justify-center items-center text-center p-4">
       <h1 className="text-white text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl">
         DORCAS CHARLES
       </h1>
