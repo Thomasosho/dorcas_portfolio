@@ -1,4 +1,5 @@
 import "@/styles/globals.css";
+import { SpeedInsights } from '@vercel/speed-insights/react';
 import { Marcellus_SC, Marcellus } from "next/font/google";
 
 const Marcellus_s = Marcellus_SC({
@@ -22,6 +23,7 @@ export default function App({ Component, pageProps }) {
         `}
       </style>
       <Component {...pageProps} />
+      <SpeedInsights />
     </>
   );
 }
