@@ -17,7 +17,7 @@ const skill = [
 const education = [
   {
     title: "Digital Marketing",
-    description: "digital marketing skill institute (in progress)",
+    description: "digital marketing skill institute",
   },
   {
     title: "Business Administration MSC",
