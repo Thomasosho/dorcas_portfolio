@@ -7,6 +7,10 @@ export default async function handler(req, res) {
   const clientSecret = process.env.GMAIL_CLIENT_SECRET;
   const refreshToken = process.env.GMAIL_REFRESH_TOKEN;
 
+  console.log("clientId:", clientId);
+  console.log("clientSecret:", clientSecret);
+  console.log("refreshToken:", refreshToken);
+
   // Create a new OAuth2 client
   const auth = new GoogleAuth({
     credentials: {
