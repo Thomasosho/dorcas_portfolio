@@ -22,32 +22,35 @@ export default async function handler(req, res) {
 
   const { fullName, email, message } = req.body;
 
-  const transporter = nodemailer.createTransport({
-    service: 'gmail',
-    auth: {
-      type: 'OAuth2',
-      user: 'dorcasmomodu1@gmail.com', // Your Gmail address
-      clientId,
-      clientSecret,
-      refreshToken,
-      accessToken: auth.getAccessToken(),
-    },
-  });
-  
-
-  // Define email options
-  const mailOptions = {
-    from: email,
-    to: "charlesdorcas01@gmail.com",
-    subject: "New Email From Contact",
-    html: `
-      <p><strong>Name:</strong> ${fullName}</p>
-      <p><strong>Email:</strong> ${email}</p>
-      <p><strong>Message:</strong> ${message}</p>
-    `,
-  };
-
   try {
+    // Fetch the access token
+    const accessToken = await auth.getAccessToken();
+
+    // Create a transporter with OAuth2 authentication
+    const transporter = nodemailer.createTransport({
+      service: "gmail",
+      auth: {
+        type: "OAuth2",
+        user: "dorcasmomodu1@gmail.com",
+        clientId,
+        clientSecret,
+        refreshToken,
+        accessToken,
+      },
+    });
+
+    // Define email options
+    const mailOptions = {
+      from: email,
+      to: "charlesdorcas01@gmail.com",
+      subject: "New Email From Contact",
+      html: `
+        <p><strong>Name:</strong> ${fullName}</p>
+        <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Message:</strong> ${message}</p>
+      `,
+    };
+
     // Send the email
     await transporter.sendMail(mailOptions);
     return res.status(200).json({ success: true });
