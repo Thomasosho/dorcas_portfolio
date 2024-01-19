@@ -14,7 +14,6 @@ export default function Header() {
           <Image
             src="/logo.png"
             alt="Dorcas Charles"
-            className="dark:invert"
             width={32}
             height={24}
             priority
@@ -23,7 +22,7 @@ export default function Header() {
         <button
           onClick={toggleMobileMenu}
           type="button"
-          className="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+          className="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
           aria-controls="mobile-menu"
           aria-expanded="false"
         >
@@ -58,7 +57,7 @@ export default function Header() {
             <li>
               <Link
                 href="/"
-                className="block py-2 pr-4 pl-3 text-black text-xl md:bg-transparent md:p-0 dark:text-white"
+                className="block py-2 pr-4 pl-3 text-black text-xl md:bg-transparent md:p-0"
                 aria-current="page"
               >
                 Home
@@ -67,7 +66,7 @@ export default function Header() {
             <li>
               <Link
                 href="/about"
-                className="block py-2 pr-4 pl-3 text-black text-xl  md:p-0 dark:text-white"
+                className="block py-2 pr-4 pl-3 text-black text-xl  md:p-0"
                 aria-current="page"
               >
                 About

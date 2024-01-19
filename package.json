@@ -12,9 +12,13 @@
     "@vercel/analytics": "^1.1.2",
     "@vercel/speed-insights": "^1.0.5",
     "alpinejs": "^3.13.3",
+    "axios": "^1.6.5",
     "dotenv": "^16.3.1",
+    "google-auth-library": "^9.4.2",
     "next": "14.0.4",
+    "next-auth": "^4.24.5",
     "nodemailer": "^6.9.8",
+    "nodemailer-smtp-transport": "^2.7.4",
     "react": "^18",
     "react-dom": "^18"
   },

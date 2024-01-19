@@ -1,20 +1,39 @@
 import nodemailer from "nodemailer";
+import { GoogleAuth } from "google-auth-library";
 
 export default async function handler(req, res) {
+  // Your Gmail OAuth credentials
+  const clientId = process.env.GMAIL_CLIENT_ID;
+  const clientSecret = process.env.GMAIL_CLIENT_SECRET;
+  const refreshToken = process.env.GMAIL_REFRESH_TOKEN;
+
+  // Create a new OAuth2 client
+  const auth = new GoogleAuth({
+    credentials: {
+      client_id: clientId,
+      client_secret: clientSecret,
+      refresh_token: refreshToken,
+    },
+  });
+
   if (req.method !== "POST") {
     return res.status(405).end();
   }
 
   const { fullName, email, message } = req.body;
 
-  // Configure nodemailer
   const transporter = nodemailer.createTransport({
-    service: "gmail",
+    service: 'gmail',
     auth: {
-      user: process.env.GMAIL_USER,
-      pass: process.env.GMAIL_PASS,
+      type: 'OAuth2',
+      user: 'dorcasmomodu1@gmail.com', // Your Gmail address
+      clientId,
+      clientSecret,
+      refreshToken,
+      accessToken: auth.getAccessToken(),
     },
   });
+  
 
   // Define email options
   const mailOptions = {
