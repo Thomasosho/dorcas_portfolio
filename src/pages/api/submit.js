@@ -16,7 +16,7 @@ export default async function handler(req, res) {
     credentials: {
       client_id: clientId,
       client_secret: clientSecret,
-      refresh_token: refreshToken,
+      // refresh_token: refreshToken,
     },
   });
 
@@ -38,7 +38,7 @@ export default async function handler(req, res) {
         user: "dorcasmomodu1@gmail.com",
         clientId,
         clientSecret,
-        refreshToken,
+        // refreshToken,
         accessToken,
       },
     });
