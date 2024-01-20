@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import React, { useEffect } from "react";
 
 const projects = [
   {
@@ -34,6 +34,31 @@ const projects = [
 ];
 
 export default function Portfolio() {
+
+  useEffect(() => {
+    const reveal = () => {
+      const reveals = document.querySelectorAll('.reveal');
+      const windowHeight = window.innerHeight;
+      const elementVisible = 150;
+
+      for (let i = 0; i < reveals.length; i++) {
+        const elementTop = reveals[i].getBoundingClientRect().top;
+
+        if (elementTop < windowHeight - elementVisible) {
+          reveals[i].classList.add('active');
+        } else {
+          reveals[i].classList.remove('active');
+        }
+      }
+    };
+
+    window.addEventListener('scroll', reveal);
+
+    return () => {
+      window.removeEventListener('scroll', reveal); // Clean up the event listener on component unmount
+    };
+  }, []);
+
   return (
     <div className="lg:p-10 w-screen">
       <div className="text-black marcellus-heading text-[32px] text-center my-14 flex justify-center items-center">
@@ -44,7 +69,7 @@ export default function Portfolio() {
         <div className="grid lg:grid-cols-2 lg:gap-28 gap-2">
           {projects.map((project, index) => (
             <React.Fragment key={index}>
-              <div className="col-auto gap-4 self-center">
+              <div className="col-auto gap-4 self-center reveal fade-left">
                 <h3 className="marcellus-heading text-[32px]">{project.title}</h3>
                 <p className="text-[18px]">{project.description}</p>
                 <button 
@@ -69,7 +94,7 @@ export default function Portfolio() {
                   />
                 </Link> */}
               </div>
-              <div className="col-auto">
+              <div className="col-auto reveal fade-right">
                 <Image
                   src={project.imageUrl}
                   alt="Dorcas Charles"

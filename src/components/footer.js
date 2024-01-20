@@ -1,7 +1,7 @@
 import { Marcellus } from "next/font/google";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const Marcell = Marcellus({
   weight: ["400"],
@@ -48,12 +48,36 @@ export default function Footer() {
     }
   }
 
+  useEffect(() => {
+    const reveal = () => {
+      const reveals = document.querySelectorAll('.reveal');
+      const windowHeight = window.innerHeight;
+      const elementVisible = 150;
+
+      for (let i = 0; i < reveals.length; i++) {
+        const elementTop = reveals[i].getBoundingClientRect().top;
+
+        if (elementTop < windowHeight - elementVisible) {
+          reveals[i].classList.add('active');
+        } else {
+          reveals[i].classList.remove('active');
+        }
+      }
+    };
+
+    window.addEventListener('scroll', reveal);
+
+    return () => {
+      window.removeEventListener('scroll', reveal); // Clean up the event listener on component unmount
+    };
+  }, []);
+
   return (
     <div
       id="footer"
       className="w-screen h-[auto] bg-[#595959] lg:flex lg:flex-col justify-center items-center text-center"
     >
-      <div className="grid lg:grid-cols-3 grid-cols-1 gap-1 items-center">
+      <div className="grid lg:grid-cols-3 grid-cols-1 gap-1 items-center reveal fade-left">
         <div className="col-auto lg:p-32 p-10 w-auto justify-self-center">
           <Image
             src="/purpleGirl.png"

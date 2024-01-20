@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import Count from "./aboutCount";
+import { useEffect } from "react";
 
 const software = ["Figma", "Adobe xd", "Framer", "Trello", "Miro", "Whimsical"];
 
@@ -76,6 +77,31 @@ const contact = [
 ];
 
 export default function About() {
+
+  useEffect(() => {
+    const reveal = () => {
+      const reveals = document.querySelectorAll('.reveal');
+      const windowHeight = window.innerHeight;
+      const elementVisible = 150;
+
+      for (let i = 0; i < reveals.length; i++) {
+        const elementTop = reveals[i].getBoundingClientRect().top;
+
+        if (elementTop < windowHeight - elementVisible) {
+          reveals[i].classList.add('active');
+        } else {
+          reveals[i].classList.remove('active');
+        }
+      }
+    };
+
+    window.addEventListener('scroll', reveal);
+
+    return () => {
+      window.removeEventListener('scroll', reveal); // Clean up the event listener on component unmount
+    };
+  }, []);
+
   return (
     <div className="w-screen min-h-screen bg-[#f3efef] space-y-28 flex flex-col justify-center items-center text-center pb-28">
       <div className="text-black uppercase text-center lg:mt-32 mt-40 flex justify-center items-center">
@@ -84,7 +110,7 @@ export default function About() {
       </div>
       <div className="h-auto lg:px-36 p-10 flex justify-center items-center">
         <div className="grid lg:grid-cols-4 gap-28">
-          <div className="col-auto">
+          <div className="col-auto reveal fade-left">
             <Image
               src="/whiteBG.png"
               alt="Dorcas Charles"
@@ -109,7 +135,7 @@ export default function About() {
               {software.map((software, index) => (
                 <p
                   key={index}
-                  className={index !== 0 ? "mt-2 text-[16px]" : "text-[16px]"}
+                  className={index !== 0 ? "mt-2 text-[16px] reveal fade-right" : "text-[16px] reveal fade-right"}
                 >
                   {software}
                 </p>
@@ -121,7 +147,7 @@ export default function About() {
             </h3>
             <div>
               {experience.map((software, index) => (
-                <div key={index} className={index !== 0 ? "mt-2" : ""}>
+                <div key={index} className={index !== 0 ? "mt-2 reveal fade-right" : "reveal fade-left"}>
                   <p className="text-[16px]">{software.title}</p>
                   <span className="text-xs text-gray-600">
                     {software.description}
@@ -137,7 +163,7 @@ export default function About() {
               {skill.map((software, index) => (
                 <p
                   key={index}
-                  className={index !== 0 ? "mt-2 text-[16px]" : " text-[16px]"}
+                  className={index !== 0 ? "mt-2 text-[16px] reveal fade-left" : " text-[16px] reveal fade-right"}
                 >
                   {software}
                 </p>
@@ -155,8 +181,8 @@ export default function About() {
                   key={index}
                   className={
                     index !== 0
-                      ? "mt-2 flex items-center whitespace-nowrap space-x-2"
-                      : "flex items-center whitespace-nowrap space-x-2"
+                      ? "mt-2 flex items-center whitespace-nowrap space-x-2 reveal fade-right"
+                      : "flex items-center whitespace-nowrap space-x-2 reveal fade-right"
                   }
                 >
                   <Image
@@ -177,7 +203,7 @@ export default function About() {
             <h3 className="uppercase first-letter:text-xl mb-5">Education</h3>
             <div>
               {education.map((software, index) => (
-                <div key={index} className={index !== 0 ? "mt-2" : ""}>
+                <div key={index} className={index !== 0 ? "mt-2 reveal fade-right" : " reveal fade-left"}>
                   <p className="text-[16px]">{software.title}</p>
                   <span className="text-xs text-gray-600">
                     {software.description}

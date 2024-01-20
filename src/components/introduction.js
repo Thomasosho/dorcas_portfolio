@@ -1,6 +1,7 @@
 import { Marcellus } from "next/font/google";
 import Image from "next/image";
 import { useRouter } from 'next/router';
+import { useEffect } from "react";
 
 const Marcell = Marcellus({
   weight: ["400"],
@@ -11,9 +12,33 @@ export default function Introduction() {
   
   const router = useRouter();
 
+  useEffect(() => {
+    const reveal = () => {
+      const reveals = document.querySelectorAll('.reveal');
+      const windowHeight = window.innerHeight;
+      const elementVisible = 150;
+
+      for (let i = 0; i < reveals.length; i++) {
+        const elementTop = reveals[i].getBoundingClientRect().top;
+
+        if (elementTop < windowHeight - elementVisible) {
+          reveals[i].classList.add('active');
+        } else {
+          reveals[i].classList.remove('active');
+        }
+      }
+    };
+
+    window.addEventListener('scroll', reveal);
+
+    return () => {
+      window.removeEventListener('scroll', reveal); // Clean up the event listener on component unmount
+    };
+  }, []);
+
   return (
     <div className="w-screen h-[auto] p-10 bg-[#595959] space-y-16 flex flex-col justify-center items-center text-center">
-      <div className="grid lg:grid-cols-2 gap-1 items-center">
+      <div className="grid lg:grid-cols-2 gap-1 items-center reveal fade-right">
         <div className="col-auto lg:p-32 w-auto justify-self-center">
           <Image
             src="/dorcasOne.png"
