@@ -77,7 +77,7 @@ export default function Footer() {
       id="footer"
       className="w-screen h-[auto] bg-[#595959] lg:flex lg:flex-col justify-center items-center text-center"
     >
-      <div className="grid lg:grid-cols-3 grid-cols-1 gap-1 items-center reveal fade-left">
+      <div className="grid lg:grid-cols-3 grid-cols-1 gap-1 items-center reveal fade-bottom">
         <div className="col-auto lg:p-32 p-10 w-auto justify-self-center">
           <Image
             src="/purpleGirl.png"

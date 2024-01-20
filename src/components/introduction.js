@@ -38,7 +38,7 @@ export default function Introduction() {
 
   return (
     <div className="w-screen h-[auto] p-10 bg-[#595959] space-y-16 flex flex-col justify-center items-center text-center">
-      <div className="grid lg:grid-cols-2 gap-1 items-center reveal fade-right">
+      <div className="grid lg:grid-cols-2 gap-1 items-center reveal fade-bottom">
         <div className="col-auto lg:p-32 w-auto justify-self-center">
           <Image
             src="/dorcasOne.png"

@@ -41,7 +41,7 @@ export default function Offer() {
         <span className="bg-black h-0.5 w-5 mr-1"></span> What i Offer{" "}
         <span className="bg-black h-0.5 w-5 ml-1"></span>
       </div>
-      <div className="h-auto py-5 bg-[#fff] flex justify-center items-center text-center reveal fade-right">
+      <div className="h-auto py-5 bg-[#fff] flex justify-center items-center text-center reveal fade-bottom">
         <div className="grid lg:grid-cols-6 lg:gap-20 gap-5">
           {designItems.map((item, index) => (
             <div key={index} className="col-auto relative">

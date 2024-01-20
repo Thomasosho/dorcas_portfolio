@@ -69,7 +69,7 @@ export default function Portfolio() {
         <div className="grid lg:grid-cols-2 lg:gap-28 gap-2">
           {projects.map((project, index) => (
             <React.Fragment key={index}>
-              <div className="col-auto gap-4 self-center reveal fade-left">
+              <div className="col-auto gap-4 self-center reveal fade-bottom">
                 <h3 className="marcellus-heading text-[32px]">{project.title}</h3>
                 <p className="text-[18px]">{project.description}</p>
                 <button 
@@ -94,7 +94,7 @@ export default function Portfolio() {
                   />
                 </Link> */}
               </div>
-              <div className="col-auto reveal fade-right">
+              <div className="col-auto reveal fade-bottom">
                 <Image
                   src={project.imageUrl}
                   alt="Dorcas Charles"

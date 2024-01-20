@@ -110,7 +110,7 @@ export default function About() {
       </div>
       <div className="h-auto lg:px-36 p-10 flex justify-center items-center">
         <div className="grid lg:grid-cols-4 gap-28">
-          <div className="col-auto reveal fade-left">
+          <div className="col-auto reveal fade-bottom">
             <Image
               src="/whiteBG.png"
               alt="Dorcas Charles"
@@ -135,7 +135,7 @@ export default function About() {
               {software.map((software, index) => (
                 <p
                   key={index}
-                  className={index !== 0 ? "mt-2 text-[16px] reveal fade-right" : "text-[16px] reveal fade-right"}
+                  className={index !== 0 ? "mt-2 text-[16px] reveal fade-bottom" : "text-[16px] reveal fade-bottom"}
                 >
                   {software}
                 </p>
@@ -147,7 +147,7 @@ export default function About() {
             </h3>
             <div>
               {experience.map((software, index) => (
-                <div key={index} className={index !== 0 ? "mt-2 reveal fade-right" : "reveal fade-left"}>
+                <div key={index} className={index !== 0 ? "mt-2 reveal fade-bottom" : "reveal fade-bottom"}>
                   <p className="text-[16px]">{software.title}</p>
                   <span className="text-xs text-gray-600">
                     {software.description}
@@ -163,7 +163,7 @@ export default function About() {
               {skill.map((software, index) => (
                 <p
                   key={index}
-                  className={index !== 0 ? "mt-2 text-[16px] reveal fade-left" : " text-[16px] reveal fade-right"}
+                  className={index !== 0 ? "mt-2 text-[16px] reveal fade-bottom" : " text-[16px] reveal fade-bottom"}
                 >
                   {software}
                 </p>
@@ -181,8 +181,8 @@ export default function About() {
                   key={index}
                   className={
                     index !== 0
-                      ? "mt-2 flex items-center whitespace-nowrap space-x-2 reveal fade-right"
-                      : "flex items-center whitespace-nowrap space-x-2 reveal fade-right"
+                      ? "mt-2 flex items-center whitespace-nowrap space-x-2 reveal fade-bottom"
+                      : "flex items-center whitespace-nowrap space-x-2 reveal fade-bottom"
                   }
                 >
                   <Image
@@ -203,7 +203,7 @@ export default function About() {
             <h3 className="uppercase first-letter:text-xl mb-5">Education</h3>
             <div>
               {education.map((software, index) => (
-                <div key={index} className={index !== 0 ? "mt-2 reveal fade-right" : " reveal fade-left"}>
+                <div key={index} className={index !== 0 ? "mt-2 reveal fade-bottom" : " reveal fade-bottom"}>
                   <p className="text-[16px]">{software.title}</p>
                   <span className="text-xs text-gray-600">
                     {software.description}

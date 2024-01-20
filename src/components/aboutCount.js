@@ -65,11 +65,11 @@ export default function Count() {
         {process.map((software, index) => (
           <div key={index} className={"mt-2"}>
             <div
-              className={`col-auto arape-button text-[#B464A3] text-[100px] reveal fade-right ${Arap.style.fontFamily}`}
+              className={`col-auto arape-button text-[#B464A3] text-[100px] reveal fade-bottom ${Arap.style.fontFamily}`}
             >
               {software.title}
             </div>
-            <span className="text-xs marcellus-heading text-white text-[20px] reveal fade-left">
+            <span className="text-xs marcellus-heading text-white text-[20px] reveal fade-bottom">
               {software.description}
             </span>
           </div>
