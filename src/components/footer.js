@@ -121,7 +121,8 @@ export default function Footer() {
 
             <Link
               target="_blank"
-              href={"\www.behance.net/charlesdorcas"}
+              rel="noopener noreferrer"
+              href={"https://behance.net/charlesdorcas"}
               className={`mt-2`}
             >
               <Image
@@ -135,7 +136,8 @@ export default function Footer() {
 
             <Link
               target="_blank"
-              href={"\www.dribble.com/charlesdorcas01"}
+              rel="noopener noreferrer"
+              href={"https://dribble.com/charlesdorcas01"}
               className={`mt-2`}
             >
               <Image
@@ -149,7 +151,8 @@ export default function Footer() {
 
             <Link
               target="_blank"
-              href={"\www.linkedin.com/in/dorcas-charles"}
+              rel="noopener noreferrer"
+              href={"https://linkedin.com/in/dorcas-charles"}
               className={`mt-2`}
             >
               <Image
