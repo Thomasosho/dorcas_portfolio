@@ -218,7 +218,7 @@ export default function Footer() {
         </div>
       </div>
       <div className="text-center text-white p-10">
-        Copyright {currentYear} - All rights reserved
+        Copyright &copy; {currentYear} - All rights reserved
       </div>
     </div>
   );
